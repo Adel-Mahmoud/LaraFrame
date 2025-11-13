@@ -1,0 +1,28 @@
+.chart-container {
+    position: relative;
+    height: 300px;
+}
+
+.chart-legend {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.legend-item {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 12px;
+}
+
+.legend-color {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+    border-radius: 2px;
+}
+
+.flot-chart {
+    width: 100%;
+    height: 100%;
+}

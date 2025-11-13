@@ -1,0 +1,68 @@
+body {
+    font-family: 'Cairo', sans-serif;
+}
+
+.phone .iti--allow-dropdown {
+    width: 100%;
+}
+
+.side-menu__item i {
+    color: #6c757d !important;
+}
+
+.side-menu__item.active i {
+    color: #277aec !important;
+}
+
+.submit {
+    cursor: pointer;
+}
+
+.submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.spinner {
+    border: 2px solid white;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+/* .main-logo{
+    height: 4rem !important;
+}
+.main-sidebar-header{
+    display: block !important;
+}
+@media (max-width: 768px) and (min-width: 574px) {
+    .responsive-logo .logo-1 {
+        height: 4rem !important;
+    }
+}
+@media (max-width: 574px) {
+    .responsive-logo .logo-2 {
+        height: 4rem !important;
+    }
+}
+.menu-icon{
+    font-size: 1.5em !important;
+}
+.sign-favicon{
+    height: 80px !important;
+} */

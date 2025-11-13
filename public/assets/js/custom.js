@@ -1,3 +1,19 @@
+const forms = document.querySelectorAll('form');
+if (forms.length > 0) {
+  forms.forEach(form => {
+    const button = form.querySelector('.submit');
+    if (button) {
+      form.addEventListener('submit', e => {
+        // e.preventDefault();
+        button.disabled = true;
+        const spinner = document.createElement('div');
+        spinner.classList.add('spinner');
+        button.appendChild(spinner);
+      });
+    }
+  });
+}
+
 $(function() {
 	'use strict'
 	
