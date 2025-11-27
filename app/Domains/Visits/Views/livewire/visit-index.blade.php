@@ -91,6 +91,17 @@
                                 @endif
                             </td>
                             <td>
+                                @can('view examinations')
+                                    @if($visit->status !== 'completed' && $visit->queue_position !== 1)
+                                    <a
+                                        data-bs-toggle="tooltip"
+                                        data-bs-placement="top"
+                                        title="كشف مستعجل"
+                                        href="{{ url('/admin/examinations/'.$visit->id) }}" class="btn btn-sm btn-info">
+                                        <i class="fas fa-stethoscope"></i>
+                                    </a>
+                                    @endif
+                                @endcan
                                 @can('edit visit')
                                 <a href="{{ route('admin.visits.edit', $visit->id) }}" class="btn btn-sm btn-warning">
                                     <i class="fas fa-edit"></i>

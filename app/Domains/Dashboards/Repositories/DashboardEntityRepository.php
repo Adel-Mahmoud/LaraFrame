@@ -39,7 +39,7 @@ class DashboardEntityRepository
             ->groupBy('date')
             ->orderBy('date', 'asc')
             ->get();
-
+ 
         return [
             'new_patients_today'     => $newPatientsCount,
             'confirmed_reservations' => $confirmedReservationsCount,

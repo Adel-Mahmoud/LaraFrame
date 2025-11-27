@@ -19,9 +19,9 @@ class ExaminationEntityController extends Controller
         $this->middleware('permission:print prescription')->only(['print']);
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $visitData = $this->repo->getNowVisitInQueue();
+        $visitData = $this->repo->getNowVisitInQueue($request->visit_id);
 
         $nowVisit = $visitData['now'];
         $lastCompleted = $visitData['last_completed'];
@@ -54,12 +54,10 @@ class ExaminationEntityController extends Controller
     {
         $visit = $this->repo->getVisitById($request->id);
         return view('examinations::admin.show', compact('visit'));
-
     }
     public function print(Request $request)
     {
         $visit = $this->repo->getVisitById($request->id);
         return view('examinations::admin.print', compact('visit'));
-
     }
 }

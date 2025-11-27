@@ -15,7 +15,7 @@ class DashboardEntityController extends Controller
         // Permissions
         // $this->middleware('permission:view dashboard')->only(['index']);
     }
-
+ 
     public function index()
     {
         $stats = $this->dashboardRepository->getDashboardStats();

@@ -27,7 +27,7 @@ class DrugEntityRepository
     public function create(array $data)
     {
         $data['created_by'] = auth('admin')->check() ? auth('admin')->id() : null;
-        return DrugEntity::create($data);
+        return DrugEntity::create($data); 
     }
 
     public function update($id, array $data)

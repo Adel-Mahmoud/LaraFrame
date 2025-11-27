@@ -76,13 +76,19 @@
                             <td>{{ $patient->created_at?->format('Y-m-d') }}</td>
                             <td>
                                 @can('create visit')
-                                <a href="{{ route('admin.visits.create.with.patient', $patient->id) }}" class="btn btn-sm btn-success">
-                                    <i class="fas fa-calendar-plus"></i> 
+                                <a href="{{ route('admin.visits.create.with.patient', $patient->id) }}" class="btn btn-sm btn-success"
+                                    data-bs-toggle="tooltip"
+                                    data-bs-placement="top"
+                                    title="إضافة زيارة جديدة">
+                                    <i class="fas fa-calendar-plus"></i>
                                 </a>
                                 @endcan
                                 @can('view visits')
-                                <a href="{{ route('admin.patient.history', $patient->id) }}" class="btn btn-sm btn-info">
-                                    <i class="fas fa-clipboard-list"></i> 
+                                <a href="{{ route('admin.patient.history', $patient->id) }}" class="btn btn-sm btn-info"
+                                    data-bs-toggle="tooltip"
+                                    data-bs-placement="top"
+                                    title="سجل الزيارات">
+                                    <i class="fas fa-clipboard-list"></i>
                                 </a>
                                 @endcan
                                 @can('edit patient')

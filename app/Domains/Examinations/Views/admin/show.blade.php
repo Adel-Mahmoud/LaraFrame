@@ -93,7 +93,7 @@
                         </div>
                     </div>
 
-                    <div class="form-section">
+                    <div class="form-section mt-5">
                         <h6 class="form-section-title"><i class="fe fe-sliders me-2"></i> التحاليل والأشعة المطلوبة</h6>
                         <div class="row g-4">
                             <div class="col-md-4">
@@ -115,7 +115,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12 mt-5">
                         <div class="form-section">
                             <h6 class="form-section-title"><i class="fe fe-edit me-2"></i> ملاحظات إضافية</h6>
                             @if($visit->notes && $visit->notes !== '')
@@ -127,7 +127,7 @@
                             @endif
                         </div>
                     </div>
-                    <div class="col-md-12">
+                    <div class="col-md-12 mt-5">
                         <div class="form-section">
                             <h6 class="form-section-title"><i class="fe fe-paperclip me-2"></i> المرفقات</h6>
                             <div class="table-responsive">

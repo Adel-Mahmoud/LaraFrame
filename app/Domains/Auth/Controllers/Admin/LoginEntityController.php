@@ -15,6 +15,8 @@ class LoginEntityController extends Controller
     public function __construct(AdminRepository $admins)
     {
         $this->admins = $admins;
+
+        $this->middleware('check.subscription');
     }
 
     public function showLoginForm()

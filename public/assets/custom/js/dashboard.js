@@ -2,15 +2,13 @@ const barLabels = salesChartData.map(item => item.formatted_date);
 const barRevenue = salesChartData.map(item => Number(item.total_revenue) || 0);
 const barVisits = salesChartData.map(item => Number(item.visits_count) || 0);
 
-// console.log('بيانات الزيارات:', barVisits);
-// console.log('بيانات المبيعات:', barRevenue);
 
 const allVisitsZero = barVisits.every(visit => visit === 0);
 if (allVisitsZero) {
-    // console.warn(' جميع قيم الزيارات صفر، سيتم استخدام بيانات تجريبية');
-    barVisits.forEach((_, index) => {
-        barVisits[index] = Math.max(1, Math.round(barRevenue[index] / 100));
-    });
+    // barVisits.forEach((_, index) => {
+    //     barVisits[index] = Math.max(1, Math.round(barRevenue[index] / 100));
+    // });
+    console.log("لا توجد بيانات زيارات للعرض");
 }
 
 const barData = [{

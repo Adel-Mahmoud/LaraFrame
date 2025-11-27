@@ -1,10 +1,11 @@
 <?php
 
 use Illuminate\Foundation\Application;
+use App\Http\Middleware\CheckSubscription;
+use Spatie\Permission\Middleware\RoleMiddleware;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 use Spatie\Permission\Middleware\PermissionMiddleware;
-use Spatie\Permission\Middleware\RoleMiddleware;
 use Spatie\Permission\Middleware\RoleOrPermissionMiddleware;
 
 return Application::configure(basePath: dirname(__DIR__))
@@ -19,6 +20,7 @@ return Application::configure(basePath: dirname(__DIR__))
             'role' => RoleMiddleware::class,
             'role_or_permission' => RoleOrPermissionMiddleware::class,
             'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+            'check.subscription' => CheckSubscription::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
