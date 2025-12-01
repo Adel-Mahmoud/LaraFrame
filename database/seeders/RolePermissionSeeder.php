@@ -21,6 +21,7 @@ class RolePermissionSeeder extends Seeder
 			'view settings','edit settings',
 			'view services','create service','edit service','delete service',
 			'view visits','create visit','edit visit','delete visit',
+			'view reservations','create reservation','edit reservation','delete reservation',
 			'view patients','create patient','edit patient','delete patient',
 			'view drugs','create drug','edit drug','delete drug','import drugs','export drugs',
 			'view examinations','create examination','edit examination','delete examination','print prescription',

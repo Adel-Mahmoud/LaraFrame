@@ -37,8 +37,8 @@ return [
         'type'   => 'dropdown',
         'icon'   => '<i class="fas fa-calendar-alt fa-lg menu-icon"></i>',
         'children' => [
-            ['label' => 'عرض الحجوزات', 'url' => '/admin/reservations', 'can' => 'view visits'],
-            ['label' => 'إضافة حجز جديد', 'url' => '/admin/reservations/create', 'can' => 'create visit'],
+            ['label' => 'عرض الحجوزات', 'url' => '/admin/reservations', 'can' => 'view reservations'],
+            ['label' => 'إضافة حجز جديد', 'url' => '/admin/reservations/create', 'can' => 'create reservation'],
         ],
     ],
     [

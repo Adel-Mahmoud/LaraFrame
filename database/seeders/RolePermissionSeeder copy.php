@@ -47,6 +47,12 @@ class RolePermissionSeeder extends Seeder
 			'edit visit',
 			'delete visit',
 
+			// Reservations
+			'view reservations',
+			'create reservation',
+			'edit reservation',
+			'delete reservation',
+
 			// Patients
 			'view patients',
 			'create patient',
