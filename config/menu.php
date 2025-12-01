@@ -33,6 +33,15 @@ return [
         ],
     ],
     [
+        'label'  => 'الحجوزات',
+        'type'   => 'dropdown',
+        'icon'   => '<i class="fas fa-calendar-alt fa-lg menu-icon"></i>',
+        'children' => [
+            ['label' => 'عرض الحجوزات', 'url' => '/admin/reservations', 'can' => 'view visits'],
+            ['label' => 'إضافة حجز جديد', 'url' => '/admin/reservations/create', 'can' => 'create visit'],
+        ],
+    ],
+    [
         'label'  => 'المرضي',
         'type'   => 'dropdown',
         'icon'   => '<i class="fas fa-user-injured fa-lg menu-icon"></i>',

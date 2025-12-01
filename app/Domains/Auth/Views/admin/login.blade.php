@@ -35,11 +35,11 @@
                                             @endif
                                             <div class="form-group">
                                                 <label>البريد الإلكتروني</label>
-                                                <input class="form-control" name="email" placeholder="أدخل بريدك الإلكتروني" type="email" required>
+                                                <input class="form-control" value="a@a.com" name="email" placeholder="أدخل بريدك الإلكتروني" type="email" required>
                                             </div>
                                             <div class="form-group">
                                                 <label>كلمة المرور</label>
-                                                <input class="form-control" name="password" placeholder="أدخل كلمة المرور" type="password" required>
+                                                <input class="form-control" value="00000000" name="password" placeholder="أدخل كلمة المرور" type="password" required>
                                             </div>
                                             <button class="btn btn-main-primary btn-block submit d-flex justify-content-center align-items-center gap-2">
                                                 تسجيل الدخول
