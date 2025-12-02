@@ -18,14 +18,6 @@ class DashboardEntityController extends Controller
  
     public function index()
     {
-        $stats = $this->dashboardRepository->getDashboardStats();
-        $chartData = $this->dashboardRepository->getSalesAndVisitsChartData(7);
-        $reservationsDistribution = $this->dashboardRepository->getReservationsDistribution();
-        
-        return view('dashboards::admin.index', [
-            'stats' => $stats,
-            'chartData' => $chartData,
-            'reservationsDistribution' => $reservationsDistribution,
-        ]);
+        return view('dashboards::admin.index');
     }
 }

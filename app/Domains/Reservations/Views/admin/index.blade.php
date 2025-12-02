@@ -1,1 +1,0 @@
-<h1>Reservations Admin Index</h1>

@@ -1,1 +1,0 @@
-<h1>Reservations Web Index</h1>
