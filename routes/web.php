@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
-use Inertia\Inertia;
 
 Route::get('/', function () {
     return view('welcome');
@@ -13,7 +12,11 @@ Auth::routes();
 
 
 Route::get('/', function () {
-    return Inertia::render('Home'); // resources/js/Pages/Home.tsx
+    return view('index'); 
+}); 
+
+Route::get('/admin', function () {
+    return view('welcome'); 
 });
 
 

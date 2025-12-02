@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عيادة د. أحمد محمد - رعاية صحية متميزة</title>
+    <meta name="description" content="عيادة طبية متخصصة تقدم أفضل الخدمات الطبية مع فريق من الأطباء المتخصصين">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="nav-logo">
+                <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/>
+                    <path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"/>
+                    <circle cx="20" cy="10" r="2"/>
+                </svg>
+                <span>عيادة د. أحمد</span>
+            </div>
+
+            <div class="nav-links">
+                <a href="#hero" class="nav-link">الرئيسية</a>
+                <a href="#about" class="nav-link">عن الدكتور</a>
+                <a href="#services" class="nav-link">الخدمات</a>
+                <a href="#booking" class="nav-link">احجز موعد</a>
+                <a href="#working-hours" class="nav-link">مواعيد العمل</a>
+                <a href="#contact" class="nav-link">تواصل معنا</a>
+            </div>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="4"/>
+                        <path d="M12 2v2"/>
+                        <path d="M12 20v2"/>
+                        <path d="m4.93 4.93 1.41 1.41"/>
+                        <path d="m17.66 17.66 1.41 1.41"/>
+                        <path d="M2 12h2"/>
+                        <path d="M20 12h2"/>
+                        <path d="m6.34 17.66-1.41 1.41"/>
+                        <path d="m19.07 4.93-1.41 1.41"/>
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+                    </svg>
+                </button>
+                <a href="login.html" class="btn btn-primary btn-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+                        <polyline points="10 17 15 12 10 7"/>
+                        <line x1="15" x2="3" y1="12" y2="12"/>
+                    </svg>
+                    تسجيل الدخول
+                </a>
+            </div>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="القائمة">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="4" x2="20" y1="12" y2="12"/>
+                    <line x1="4" x2="20" y1="6" y2="6"/>
+                    <line x1="4" x2="20" y1="18" y2="18"/>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Sidebar -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="nav-logo">
+                <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/>
+                    <path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"/>
+                    <circle cx="20" cy="10" r="2"/>
+                </svg>
+                <span>عيادة د. أحمد</span>
+            </div>
+            <button class="sidebar-close" id="sidebarClose" aria-label="إغلاق">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 6 6 18"/>
+                    <path d="m6 6 12 12"/>
+                </svg>
+            </button>
+        </div>
+        <div class="sidebar-links">
+            <a href="#hero" class="sidebar-link">الرئيسية</a>
+            <a href="#about" class="sidebar-link">عن الدكتور</a>
+            <a href="#services" class="sidebar-link">الخدمات</a>
+            <a href="#booking" class="sidebar-link">احجز موعد</a>
+            <a href="#working-hours" class="sidebar-link">مواعيد العمل</a>
+            <a href="#contact" class="sidebar-link">تواصل معنا</a>
+        </div>
+        <div class="sidebar-footer">
+            <button class="theme-toggle sidebar-theme-toggle" id="sidebarThemeToggle" aria-label="تبديل الوضع">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="4"/>
+                    <path d="M12 2v2"/>
+                    <path d="M12 20v2"/>
+                    <path d="m4.93 4.93 1.41 1.41"/>
+                    <path d="m17.66 17.66 1.41 1.41"/>
+                    <path d="M2 12h2"/>
+                    <path d="M20 12h2"/>
+                    <path d="m6.34 17.66-1.41 1.41"/>
+                    <path d="m19.07 4.93-1.41 1.41"/>
+                </svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+                </svg>
+                <span class="theme-label">تبديل الوضع</span>
+            </button>
+            <a href="login.html" class="btn btn-primary btn-block">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+                    <polyline points="10 17 15 12 10 7"/>
+                    <line x1="15" x2="3" y1="12" y2="12"/>
+                </svg>
+                تسجيل الدخول
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content animate-slide-right">
+                    <h1 class="hero-title">
+                        رعاية صحية
+                        <span class="text-primary">متميزة</span>
+                    </h1>
+                    <p class="hero-description">
+                        نقدم لك أفضل الخدمات الطبية مع فريق من الأطباء المتخصصين
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#booking" class="btn btn-primary btn-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/>
+                                <line x1="16" x2="16" y1="2" y2="6"/>
+                                <line x1="8" x2="8" y1="2" y2="6"/>
+                                <line x1="3" x2="21" y1="10" y2="10"/>
+                            </svg>
+                            احجز موعدك الآن
+                        </a>
+                        <a href="#contact" class="btn btn-outline btn-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            اتصل بنا
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image animate-scale-in">
+                    <div class="hero-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&h=600&fit=crop" alt="طبيب محترف">
+                        <div class="hero-image-overlay"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+        <div class="container">
+            <div class="section-header animate-fade-in">
+                <h2 class="section-title">عن الدكتور</h2>
+                <p class="section-description">دكتور متخصص بخبرة واسعة في تقديم أفضل الرعاية الصحية للمرضى</p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-image animate-slide-right">
+                    <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=600&h=600&fit=crop" alt="الدكتور">
+                </div>
+                <div class="about-content animate-slide-left">
+                    <h3 class="about-name">د. أحمد محمد</h3>
+                    <p class="about-text">
+                        استشاري الطب العام مع خبرة تزيد عن 15 عامًا في المجال الطبي. حاصل على شهادات دولية معتمدة ومتخصص في تقديم أفضل الخدمات الطبية.
+                    </p>
+                    <p class="about-text">
+                        نهتم بتقديم رعاية طبية شاملة ومتميزة لجميع المرضى، مع التركيز على الوقاية والعلاج بأحدث الطرق الطبية.
+                    </p>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card animate-fade-in" style="--delay: 0.1s">
+                    <svg class="stat-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                    <div class="stat-value">5000+</div>
+                    <div class="stat-label">مريض راضٍ</div>
+                </div>
+                <div class="stat-card animate-fade-in" style="--delay: 0.2s">
+                    <svg class="stat-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="8" r="6"/>
+                        <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+                    </svg>
+                    <div class="stat-value">15+</div>
+                    <div class="stat-label">سنة خبرة</div>
+                </div>
+                <div class="stat-card animate-fade-in" style="--delay: 0.3s">
+                    <svg class="stat-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                    <div class="stat-value">24/7</div>
+                    <div class="stat-label">خدمة متاحة</div>
+                </div>
+                <div class="stat-card animate-fade-in" style="--delay: 0.4s">
+                    <svg class="stat-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                    </svg>
+                    <div class="stat-value">100%</div>
+                    <div class="stat-label">رعاية شخصية</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+        <div class="container">
+            <div class="section-header animate-fade-in">
+                <h2 class="section-title">خدماتنا الطبية</h2>
+                <p class="section-description">نقدم مجموعة واسعة من الخدمات الطبية المتخصصة</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card animate-fade-in" style="--delay: 0.1s">
+                    <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/>
+                        <path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"/>
+                        <circle cx="20" cy="10" r="2"/>
+                    </svg>
+                    <h3 class="service-title">الفحص الشامل</h3>
+                    <p class="service-description">فحوصات طبية شاملة للكشف المبكر عن الأمراض</p>
+                </div>
+                <div class="service-card animate-fade-in" style="--delay: 0.2s">
+                    <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                    </svg>
+                    <h3 class="service-title">أمراض القلب</h3>
+                    <p class="service-description">تشخيص وعلاج جميع أمراض القلب والأوعية الدموية</p>
+                </div>
+                <div class="service-card animate-fade-in" style="--delay: 0.3s">
+                    <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/>
+                        <path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/>
+                        <path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/>
+                        <path d="M12 18v4"/>
+                    </svg>
+                    <h3 class="service-title">الأمراض العصبية</h3>
+                    <p class="service-description">علاج متخصص للأمراض العصبية والنفسية</p>
+                </div>
+                <div class="service-card animate-fade-in" style="--delay: 0.4s">
+                    <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17 10c.7-.7 1.69 0 2.5 0a2.5 2.5 0 1 0 0-5 .5.5 0 0 1-.5-.5 2.5 2.5 0 1 0-5 0c0 .81.7 1.8 0 2.5l-7 7c-.7.7-1.69 0-2.5 0a2.5 2.5 0 0 0 0 5c.28 0 .5.22.5.5a2.5 2.5 0 1 0 5 0c0-.81-.7-1.8 0-2.5Z"/>
+                    </svg>
+                    <h3 class="service-title">العظام والمفاصل</h3>
+                    <p class="service-description">علاج إصابات العظام والمفاصل بأحدث التقنيات</p>
+                </div>
+                <div class="service-card animate-fade-in" style="--delay: 0.5s">
+                    <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
+                        <circle cx="12" cy="12" r="3"/>
+                    </svg>
+                    <h3 class="service-title">طب العيون</h3>
+                    <p class="service-description">فحص وعلاج جميع مشاكل النظر والعيون</p>
+                </div>
+                <div class="service-card animate-fade-in" style="--delay: 0.6s">
+                    <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/>
+                        <path d="m8.5 8.5 7 7"/>
+                    </svg>
+                    <h3 class="service-title">الصيدلية</h3>
+                    <p class="service-description">توفير جميع الأدوية والمستلزمات الطبية</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="booking section">
+        <div class="container">
+            <div class="section-header animate-fade-in">
+                <h2 class="section-title">احجز موعدك</h2>
+                <p class="section-description">املأ النموذج وسنتواصل معك لتأكيد الموعد</p>
+            </div>
+
+            <div class="booking-form-container animate-fade-in">
+                <form id="bookingForm" class="booking-form">
+                    <div class="form-group">
+                        <label for="name" class="form-label">الاسم الكامل *</label>
+                        <input type="text" id="name" class="form-input" placeholder="أدخل اسمك الكامل" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="form-label">رقم الهاتف *</label>
+                        <input type="tel" id="phone" class="form-input" placeholder="05xxxxxxxx" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">البريد الإلكتروني</label>
+                        <input type="email" id="email" class="form-input" placeholder="example@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="date" class="form-label">تاريخ الموعد *</label>
+                        <input type="date" id="date" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="notes" class="form-label">ملاحظات إضافية</label>
+                        <textarea id="notes" class="form-textarea" placeholder="أي معلومات إضافية تود إخبارنا بها" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block btn-lg">تأكيد الحجز</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Working Hours Section -->
+    <section id="working-hours" class="working-hours section">
+        <div class="container">
+            <div class="section-header animate-fade-in">
+                <div class="section-title-wrapper">
+                    <svg class="section-title-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                    <h2 class="section-title">مواعيد العمل</h2>
+                </div>
+                <p class="section-description">نحن متواجدون لخدمتك طوال الأسبوع</p>
+            </div>
+
+            <div class="hours-card animate-fade-in">
+                <div class="hours-list">
+                    <div class="hours-item open">
+                        <div class="hours-day">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/>
+                                <line x1="16" x2="16" y1="2" y2="6"/>
+                                <line x1="8" x2="8" y1="2" y2="6"/>
+                                <line x1="3" x2="21" y1="10" y2="10"/>
+                            </svg>
+                            <span>السبت</span>
+                        </div>
+                        <span class="hours-time">9:00 ص - 9:00 م</span>
+                    </div>
+                    <div class="hours-item open">
+                        <div class="hours-day">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/>
+                                <line x1="16" x2="16" y1="2" y2="6"/>
+                                <line x1="8" x2="8" y1="2" y2="6"/>
+                                <line x1="3" x2="21" y1="10" y2="10"/>
+                            </svg>
+                            <span>الأحد</span>
+                        </div>
+                        <span class="hours-time">9:00 ص - 9:00 م</span>
+                    </div>
+                    <div class="hours-item open">
+                        <div class="hours-day">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/>
+                                <line x1="16" x2="16" y1="2" y2="6"/>
+                                <line x1="8" x2="8" y1="2" y2="6"/>
+                                <line x1="3" x2="21" y1="10" y2="10"/>
+                            </svg>
+                            <span>الإثنين</span>
+                        </div>
+                        <span class="hours-time">9:00 ص - 9:00 م</span>
+                    </div>
+                    <div class="hours-item open">
+                        <div class="hours-day">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/>
+                                <line x1="16" x2="16" y1="2" y2="6"/>
+                                <line x1="8" x2="8" y1="2" y2="6"/>
+                                <line x1="3" x2="21" y1="10" y2="10"/>
+                            </svg>
+                            <span>الثلاثاء</span>
+                        </div>
+                        <span class="hours-time">9:00 ص - 9:00 م</span>
+                    </div>
+                    <div class="hours-item open">
+                        <div class="hours-day">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/>
+                                <line x1="16" x2="16" y1="2" y2="6"/>
+                                <line x1="8" x2="8" y1="2" y2="6"/>
+                                <line x1="3" x2="21" y1="10" y2="10"/>
+                            </svg>
+                            <span>الأربعاء</span>
+                        </div>
+                        <span class="hours-time">9:00 ص - 9:00 م</span>
+                    </div>
+                    <div class="hours-item open">
+                        <div class="hours-day">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/>
+                                <line x1="16" x2="16" y1="2" y2="6"/>
+                                <line x1="8" x2="8" y1="2" y2="6"/>
+                                <line x1="3" x2="21" y1="10" y2="10"/>
+                            </svg>
+                            <span>الخميس</span>
+                        </div>
+                        <span class="hours-time">9:00 ص - 9:00 م</span>
+                    </div>
+                    <div class="hours-item closed">
+                        <div class="hours-day">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/>
+                                <line x1="16" x2="16" y1="2" y2="6"/>
+                                <line x1="8" x2="8" y1="2" y2="6"/>
+                                <line x1="3" x2="21" y1="10" y2="10"/>
+                            </svg>
+                            <span>الجمعة</span>
+                        </div>
+                        <span class="hours-time">مغلق</span>
+                    </div>
+                </div>
+
+                <div class="hours-note">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                    <div>
+                        <h4>ملاحظة هامة</h4>
+                        <p>يُرجى الحجز المسبق لضمان الحصول على موعد مناسب. في حالات الطوارئ، يُرجى الاتصال على رقم الطوارئ المتاح على مدار الساعة.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+        <div class="container">
+            <div class="section-header animate-fade-in">
+                <h2 class="section-title">تواصل معنا</h2>
+                <p class="section-description">نحن هنا للإجابة على جميع استفساراتك</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-card animate-fade-in" style="--delay: 0.1s">
+                    <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                        <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                    <h3 class="contact-title">العنوان</h3>
+                    <p class="contact-text">الرياض، المملكة العربية السعودية</p>
+                </div>
+                <div class="contact-card animate-fade-in" style="--delay: 0.2s">
+                    <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                    <h3 class="contact-title">الهاتف</h3>
+                    <p class="contact-text">+966 50 123 4567</p>
+                </div>
+                <div class="contact-card animate-fade-in" style="--delay: 0.3s">
+                    <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect width="20" height="16" x="2" y="4" rx="2"/>
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                    </svg>
+                    <h3 class="contact-title">البريد الإلكتروني</h3>
+                    <p class="contact-text">info@clinic.com</p>
+                </div>
+                <div class="contact-card animate-fade-in" style="--delay: 0.4s">
+                    <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                    <h3 class="contact-title">ساعات العمل</h3>
+                    <p class="contact-text">السبت - الخميس: 9 صباحاً - 9 مساءً</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                    </svg>
+                    <span>عيادة د. أحمد محمد</span>
+                </div>
+                <p class="footer-copyright">© <span id="currentYear"></span> جميع الحقوق محفوظة</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" aria-label="الذهاب لأعلى">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m18 15-6-6-6 6"/>
+        </svg>
+    </button>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <div class="toast-content">
+            <svg class="toast-icon success" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            <svg class="toast-icon error" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="15" x2="9" y1="9" y2="15"/>
+                <line x1="9" x2="15" y1="9" y2="15"/>
+            </svg>
+            <span class="toast-message"></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

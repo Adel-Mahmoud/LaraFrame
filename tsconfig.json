@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+  "target": "ESNext",
+  "module": "ESNext",
+  "lib": ["DOM", "DOM.Iterable", "ESNext"],
+  "allowJs": true,
+  "checkJs": false,
+  "jsx": "react-jsx",
+  "strict": true,
+  "noEmit": true,
+  "moduleResolution": "NodeNext",
+  "esModuleInterop": true,
+  "forceConsistentCasingInFileNames": true,
+  "skipLibCheck": true,
+  "allowImportingTsExtensions": true,
+  "baseUrl": "./resources/js",
+  "paths": {
+  "@/": [""]
+  }
+  },
+  "include": ["resources/js/**/*"],
+  "exclude": ["node_modules", "vendor"]
+  }
