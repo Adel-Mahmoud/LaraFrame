@@ -91,11 +91,11 @@ class MakeDomain extends Command
         <?php
         
         use Illuminate\\Support\\Facades\\Route;
-        
-        Route::middleware(['web','auth.admin'])->prefix('admin')->group(function () {
-            Route::prefix('{$lowercaseName}')->group(function () {
-                Route::get('/', [App\\Domains\\{$name}\\Controllers\\Admin\\{$className}Controller::class, 'index']);
-            });
+
+        use App\Domains\\{$name}\Controllers\Admin\\{$className}Controller;
+
+        Route::middleware(['web','auth.admin'])->prefix('admin')->name('admin.')->group(function () {
+            Route::resource('{$lowercaseName}', {$className}Controller::class);
         });
         PHP;
 
