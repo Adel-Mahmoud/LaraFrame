@@ -12,14 +12,16 @@ class MakeDomain extends Command
                             {--table : Generate migration table}
                             {--policy : Generate policy class}
                             {--repository : Generate repository class}
-                            {--livewire : Generate livewire class}';
+                            {--livewire : Generate livewire class}
+                            {--request : Generate request class}
+                            {--all : Generate all optional classes (migration, policy, repository, request, livewire)}';
 
     protected $description = 'Create a new domain structure';
 
     public function handle(): void
     {
         $name = Str::pluralStudly($this->argument('name'));
-        $className = Str::studly(Str::singular($this->argument('name'))) . 'Entity';
+        $className = Str::studly(Str::singular($this->argument('name')));
         $domainPath = app_path("Domains/{$name}");
 
         $this->createDirectoryStructure($domainPath);
@@ -52,7 +54,7 @@ class MakeDomain extends Command
     private function createModel(string $domainPath, string $name, string $className): void
     {
         $modelPath = "{$domainPath}/Models/{$className}.php";
-        
+
         if (!File::exists($modelPath)) {
             File::put($modelPath, $this->getModelStub($name, $className));
             $this->info("Model created: {$modelPath}");
@@ -61,11 +63,15 @@ class MakeDomain extends Command
 
     private function createControllers(string $domainPath, string $name, string $className): void
     {
-        File::put("{$domainPath}/Controllers/Web/{$className}Controller.php", 
-            $this->getControllerStub($name, $className, 'Web'));
-        
-        File::put("{$domainPath}/Controllers/Admin/{$className}Controller.php", 
-            $this->getControllerStub($name, $className, 'Admin'));
+        File::put(
+            "{$domainPath}/Controllers/Web/{$className}Controller.php",
+            $this->getControllerStub($name, $className, 'Web')
+        );
+
+        File::put(
+            "{$domainPath}/Controllers/Admin/{$className}Controller.php",
+            $this->getControllerStub($name, $className, 'Admin')
+        );
     }
 
     private function createRoutes(string $domainPath, string $name, string $className): void
@@ -105,16 +111,27 @@ class MakeDomain extends Command
 
     private function createOptionalClasses(string $domainPath, string $name, string $className): void
     {
-        if ($this->option('table')) {
+
+        $generateAll = $this->option('all');
+
+        if ($this->option('table') || $generateAll) {
             $this->createMigration($domainPath, $name);
         }
 
-        if ($this->option('policy')) {
+        if ($this->option('policy') || $generateAll) {
             $this->createPolicy($domainPath, $name, $className);
         }
 
-        if ($this->option('repository')) {
+        if ($this->option('repository') || $generateAll) {
             $this->createRepository($domainPath, $name, $className);
+        }
+
+        if ($this->option('livewire') || $generateAll) {
+            $this->createLivewire($domainPath, $name, $className);
+        }
+
+        if ($this->option('request') || $generateAll) {
+            $this->createRequest($domainPath, $name, $className);
         }
     }
 
@@ -142,6 +159,37 @@ class MakeDomain extends Command
         File::ensureDirectoryExists(dirname($repoPath));
         File::put($repoPath, $this->getRepositoryStub($name, $className));
         $this->info("Repository created: {$repoPath}");
+    }
+
+    private function createLivewire(string $domainPath, string $name, string $className): void
+    {
+        $componentClass = "{$name}";
+        $livewirePath = "{$domainPath}/Livewire";
+        File::ensureDirectoryExists($livewirePath);
+
+        $componentFile = "{$livewirePath}/{$componentClass}Index.php";
+        if (!File::exists($componentFile)) {
+            File::put($componentFile, $this->getLivewireStub($name, $className));
+            $this->info("Livewire Component created: {$componentFile}");
+        }
+
+        $viewDir = "{$domainPath}/Views/livewire";
+        File::ensureDirectoryExists($viewDir);
+
+        $bladeFile = "{$viewDir}/" . Str::kebab($name) . "-index.blade.php";
+        if (!File::exists($bladeFile)) {
+            File::put($bladeFile, "<div>\n    <h1>{$name} Livewire Component</h1>\n</div>");
+            $this->info("Livewire Blade view created: {$bladeFile}");
+        }
+    }
+
+
+    private function createRequest(string $domainPath, string $name, string $className): void
+    {
+        $requestPath = "{$domainPath}/Requests/{$className}Request.php";
+        File::ensureDirectoryExists(dirname($requestPath));
+        File::put($requestPath, $this->getRequestStub($name, $className));
+        $this->info("Request created: {$requestPath}");
     }
 
     protected function getModelStub(string $name, string $className): string
@@ -283,5 +331,52 @@ class MakeDomain extends Command
             }
         }
         PHP;
+    }
+
+    protected function getRequestStub(string $name, string $className): string
+    {
+        return <<<PHP
+        <?php
+
+        namespace App\\Domains\\{$name}\\Requests;
+
+        use Illuminate\\Foundation\\Http\\FormRequest;
+
+        class {$className}Request extends FormRequest
+        {
+            public function authorize(): bool
+            {
+                return true;
+            }
+
+            public function rules(): array
+            {
+                return [
+                    'name' => 'required|string|max:255',
+                ];
+            }
+        }
+        PHP;
+    }
+
+    protected function getLivewireStub(string $name, string $className): string
+    {
+        $viewFile = strtolower($name) . '-index';
+
+        return <<<PHP
+    <?php
+
+    namespace App\\Domains\\{$name}\\Livewire;
+
+    use Livewire\\Component;
+
+    class {$name}Index extends Component
+    {
+        public function render()
+        {
+            return view('domains.{$name}.livewire.{$viewFile}');
+        }
+    }
+    PHP;
     }
 }
